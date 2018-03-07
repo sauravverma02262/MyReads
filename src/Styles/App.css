@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #d6d6d6;
+  font-family: Play;
+}
+a {
+  text-decoration: none;
+  outline: none;
+  transition: all .3s ease-in-out;
+}
+.App {
+  position: relative;
+}
+.myread-header {
+  background: #222;
+  position: fixed;
+  top:0;
+  left:0;
+  height: 80px;
+  border-bottom: 4px solid red;
+  width:100%;
+  padding: 0 20px;
+}
+.myread-header .logo {
+  line-height: 80px;
+  font-size: 30px;
+  display: inline-block;
+}
+.myread-header .logo a {
+  color:white;
+}
+.content {
+  margin-top:80px;
+}
+.navigation {
+  float: right;
+}
+.navigation ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+}
+.navigation ul li {
+  float: left;
+}
+.navigation ul li a{
+  line-height: 80px;
+  color:white;
+}
