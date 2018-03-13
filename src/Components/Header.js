@@ -1,22 +1,28 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Icons from './Icon'
+import Add from '../Images/Add.svg'
 import PropTypes from 'prop-types'
 
 const Header = (props) => {
-  const { title, active } = props
+  
+  const { title, menu } = props
   return (
     <div className="myread-header">
       <div className="logo">
         <Link to="/">{title}</Link>
       </div>
+    {menu && 
       <div className="navigation">
-        <ul>
-          {active !== 'add' &&
+          <ul>
             <li>
-              <Link to="/addBook">Add Book</Link>
-            </li>}
-        </ul>
-      </div>
+              <Link to="/search">
+                <Icons icon={Add} classes="add-book" />
+              </Link>
+            </li>
+          </ul>
+        </div>
+    }
     </div>
   )
 }
