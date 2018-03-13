@@ -1,0 +1,46 @@
+.books-shelf-s {
+    border-bottom: 30px solid rgba(255, 155, 0, 0.6);
+    
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    /* top: 0; */
+    z-index: -100;
+    /* background:#AA8347 ; */
+    width: 97.5%;
+    margin-top: -31px;
+    position: relative;
+}
+
+.books-shelf-s:after {
+	content: '';
+	background:#686868 url('../Images/download.jpeg') ;
+	height: 30px;
+	width: calc(100% + 40px); /*IE9+*/
+	position: absolute;
+	top: 30px;
+	left: 0;
+	right: 0;
+	z-index: 1;
+  margin: 0 -20px;
+}
+.books-contents {
+  margin-top: 60px;
+  
+}
+.shelf-book-holder {
+  position: relative;
+}
+.shelf-name {
+  position: absolute;
+  bottom: -30px;
+  font-size: 18px;
+  color: black;
+  background: white;
+  padding: 3px 15px;
+  margin: 0 20px;
+  text-shadow: 1px 1px 2px cornflowerblue;
+  border: 1px solid black;
+  text-transform: capitalize;
+}
+
+

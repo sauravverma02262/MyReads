@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import './Styles/App.css'
+import './Stylesheets/App.css';
 import { Route } from 'react-router-dom'
-import BookShelf from './Components/Bookshelf'
+import BookShelves from './Components/BookShelves'
 import AddBook from './Components/AddNewBook'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Route exact path="/" component={BookShelf} />
-        <Route exact path="/addBook" component={AddBook} />
+        <Route exact path="/" component={BookShelves} />
+        <Route exact path="/search" component={AddBook} />
       </div>
-    )
+    );
   }
 }
 

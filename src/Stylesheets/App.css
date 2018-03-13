@@ -1,0 +1,28 @@
+.App .shelf {
+    color: white;
+}
+
+.App .shelf h1 {
+    border-bottom: 1px solid white;
+    padding-top: 16px;
+    font-size: 24px;
+    font-family: 'Courier New', Courier;
+    text-transform: capitalize;
+}
+
+.content {
+    padding: 0px 20px 20px 20px;
+    margin: 0 auto;
+}
+.navigation {
+    float: right;
+}
+.navigation ul{
+    float: right;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.navigation ul li {
+    float:left;
+}
