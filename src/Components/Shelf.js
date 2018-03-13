@@ -27,7 +27,7 @@ class Shelf extends Component {
       <div className="shelf-container animate-bottom">
         <div className="shelf" >
           <div className="shelf-book-holder">
-            <div className="shelf-name">{name}</div>
+            <div className="shelf-name">{name} ({books.length})</div>
             <div className="books-contents">
               {sortedBooks.map((book, index) => (
                 <Book

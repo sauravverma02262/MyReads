@@ -4,6 +4,7 @@ import Icon from './Icon'
 import _ from 'lodash'
 import FullStar from '../Images/fullStar.svg'
 import HalfStar from '../Images/halfStar.svg'
+import NoCover from '../Images/cover-not-found.jpg'
 import PropTypes from 'prop-types'
 
 const BookDetails = (props) => {
@@ -17,7 +18,7 @@ const BookDetails = (props) => {
           close
         </button>
         <div className="book-image">
-          <img src={bookDetails.imageLinks.thumbnail} alt={bookDetails.title} />
+          <img src={bookDetails.imageLinks ? bookDetails.imageLinks.thumbnail : NoCover} alt={bookDetails.title} />
           {bookDetails.pageCount && <div className="page-count"><span>Pages : </span><span> {bookDetails.pageCount}</span></div>}
 
           {rating &&

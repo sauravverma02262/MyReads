@@ -12,12 +12,20 @@ class BookShelves extends Component {
 
   state = {
     books: {},
-    createShlfBy: 'shelf'
+    createShlfBy: 'shelf',
+    error: ''
   }
 
   bookShelfChanged = () => {
+   let self = this
     BooksAPI.getAll().then((books) => {
-      this.setState({ books })
+      if(books.length > 0) {
+        self.setState({ books })
+      } else {
+        self.setState({ books: [], error: 'No Books Found On Shelf.' })
+      }
+    }).catch((error)=>{
+      self.setState({error})
     })
   }
 
@@ -28,14 +36,15 @@ class BookShelves extends Component {
     this.setState({ createShlfBy })
   }
   render() {
-    const { books, createShlfBy } = this.state
+    const { books, createShlfBy, error } = this.state
     let bookShelfs = _.groupBy(books, createShlfBy)
     let shelfs = Object.keys(bookShelfs)
     return (
       <div className="App">
         <Header title="Book Shelves"  menu={true} />
         <div className="content">
-          {shelfs.length === 0 && <Spinner />}
+          {shelfs.length === 0 && error === '' && <Spinner />}
+          {error !== '' && <div className="no-data">  {error}  <a href="/search">Add books</a></div>}
           {shelfs.length > 0 && shelfs.map((shelf, index) => <Shelf key={index} name={this.nameGenartor(shelf)} books={bookShelfs[shelf]} bookShelfChanged={this.bookShelfChanged} />)}
         </div>
       </div>
